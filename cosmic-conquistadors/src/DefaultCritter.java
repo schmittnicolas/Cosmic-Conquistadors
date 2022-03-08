@@ -1,7 +1,7 @@
 public class DefaultCritter {
 
     // Position
-    private int X = 0;
+    private int X;
     private int Y;
 
     // Constructor
