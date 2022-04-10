@@ -1,51 +1,28 @@
-public class DefaultCritter {
+public class DefaultCritter implements Critter{
 
-    // Position
-    private int X;
-    private int Y;
-    private int height;
-    private int width;
+    // Fields
+    public double X, Y, Speed, Size;
+    public String Picture;
 
-    // Get
-    public int getX(){
-        return X;
-    }
-
-    public int getY(){
-        return Y;
-    }
-
-    public int getHeight(){ return height;}
-
-    public int getWidth(){ return width;}
-
-    // Set
-    public void setX(int x){
+    // Constructor
+    public DefaultCritter(double x, double y, double speed, double size, String picture){
         X = x;
-    }
-
-    public void setY(int y){
         Y = y;
+        Speed = speed;
+        Size = size;
+        Picture = picture;
     }
 
-    public void setHeight(int Height){ height = Height;}
-
-    public void setWidth(int Width){ width = Width;}
-
-    //Methods
-    public void goLeft(){
-        X -= 1;
+    // Draw
+    public void Draw(){
+        StdDraw.picture(X, Y, Picture, 0);
     }
 
-    public void goRight(){
-        X += 1;
-    }
-
-    public void goUp(){
-        Y +=1 ;
-    }
-
-    public void goDown(){
-        Y -= 1;
+    // Return True if this and critter are in contact, false otherwise
+    public boolean IsContact(DefaultCritter critter){
+        if (this.X + this.Size >= critter.X + critter.Size && this.Y + this.Size >= critter.Y + critter.Size){
+            return true;
+        }
+        return false;
     }
 }
