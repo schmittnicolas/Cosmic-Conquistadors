@@ -1,14 +1,16 @@
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
+import java.util.ArrayList; // Array Lists can be resized compared to normal arrays that has a fixed width
 
 public class InvaderGameState {
 
+    // static variables
     public static int width = 500;
     public static int height = 500;
     public static double scale = 100;
     public static int updateTime = 10;
 
-    public ArrayList<Missile> missiles;
+    // non-static variables
+    public ArrayList<Missile> missiles; // ArrayList of type Missile
     public ArrayList<Enemy> enemies;
     public Shooter shooter;
     public int score;
@@ -16,14 +18,15 @@ public class InvaderGameState {
 
     // Constructor
     public InvaderGameState(){
-        missiles = new ArrayList<Missile>();
+        missiles = new ArrayList<Missile>(); 
         enemies = new ArrayList<>();
         shooter = new Shooter(scale/2, 10);
         score = 0;
-        Enemies();
+        Enemies(); // populate ArrayList enemies
         System.out.println("Game launched");
     }
 
+    // populate ArrayList enemies in constructor
     public void Enemies(){
         double space = (scale-20)/numberOfEnemies;
         double x = 10;
@@ -100,6 +103,7 @@ public class InvaderGameState {
         StdDraw.clear();
     }
 
+    // Game loop
     public void Loop(){
         while (!StdDraw.isKeyPressed(KeyEvent.VK_Q)){
             Update();
