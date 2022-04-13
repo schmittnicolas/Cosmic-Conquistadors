@@ -16,14 +16,4 @@ public class Missile extends DefaultCritter{
         }
         return false;
     }    
-    
-    /*public boolean Move(){
-        double newY = this.Y + this.Speed;
-        if (newY <= InvaderGameState.scale){
-            this.Y = newY;
-            return true;
-        }
-
-        return false;
-    }*/
 }
