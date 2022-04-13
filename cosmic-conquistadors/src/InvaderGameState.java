@@ -70,7 +70,7 @@ public class InvaderGameState {
 
         // Update the missiles
         if (StdDraw.isKeyPressed(KeyEvent.VK_X)){
-            missiles.add(new Missile(shooter.X, shooter.Y));
+            missiles.add(new Missile(shooter.X, shooter.Y,  shooter.Degrees));
         }
         for(int i = 0; i < missiles.size(); i++){
 
