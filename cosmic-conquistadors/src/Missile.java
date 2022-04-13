@@ -15,6 +15,7 @@ public class Missile extends DefaultCritter{
             return true;
         }
         return false;
+    }    
     
     /*public boolean Move(){
         double newY = this.Y + this.Speed;
