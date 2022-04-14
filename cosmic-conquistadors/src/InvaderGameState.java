@@ -90,7 +90,7 @@ public class InvaderGameState {
     }
 
     // Update the game
-    // Return true if the is not finished, false otherwise
+    // Return true if the game is not finished, false otherwise
     public boolean Update(){
 
         // Draw the background
