@@ -1,10 +1,14 @@
 public class DefaultCritter implements Critter{
 
     // Fields
-    public double X, Y, Speed, Size, Degrees;
+    // Position
+    public double X, Y;
+
+    // Parameter
+    public double Speed, Size, Degrees;
     public String Picture;
 
-    // Constructor
+    // Constructor for a default critter
     public DefaultCritter(double x, double y, double speed, double size, double degrees,  String picture){
         X = x;
         Y = y;
@@ -14,7 +18,7 @@ public class DefaultCritter implements Critter{
         Degrees = degrees;
     }
 
-    // Draw
+    // The method is called at each update of the game to redraw the critter
     public void Draw(){
         StdDraw.picture(X, Y, Picture, Size, Size, Degrees);
     }
